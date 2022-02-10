@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% include header.html %}
+</head>
+<body>
+
+  <div id="wrapper">
+
+      <!-- Header -->
+      {% include nav.html %}
+
+
+      <!-- Main -->
+      <div id="main">
+          <div class="container">
+            <div class="post-header">
+              <h2>{{ page.title }}</h2>
+              <p>{{page.date | date:"%x"}}</p>
+            </div>
+            <div class="post-body">
+              {{ content }}
+            </div>
+          </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer" class="panel">
+          <div class="inner split">
+              <div>
+                  <section>
+                      <h2>{{ site.footer.name }}</h2>
+                      <p>{{ site.footer.bio }}</p>
+                      <p>{{ site.footer.github }}</p>
+                  </section>
+                  <section>
+                      <h2>Follow me on ...</h2>
+                      <ul class="icons">
+                          {% if site.social_urls.github %}
+                              <li>
+                                  <a href="{{ site.social_urls.github }}" class="icon fa-github">
+                                      <span class="label">GitHub</span>
+                                  </a>
+                              </li>
+                          {% endif %}
+                          {% if site.social_urls.twitter %}
+                              <li>
+                                  <a href="{{ site.social_urls.twitter }}" class="icon fa-twitter">
+                                      <span class="label">Twitter</span>
+                                  </a>
+                              </li>
+                          {% endif %}
+                          {% if site.social_urls.instagram %}
+                              <li>
+                                  <a href="{{ site.social_urls.instagram }}" class="icon fa-instagram">
+                                      <span class="label">Instagram</span>
+                                  </a>
+                              </li>
+                          {% endif %}
+                          {% if site.social_urls.linkedin %}
+                              <li>
+                                  <a href="{{ site.social_urls.linkedin }}" class="icon fa-linkedin">
+                                      <span class="label">LinkedIn</span>
+                                  </a>
+                              </li>
+                          {% endif %}
+                      </ul>
+                  </section>
+                  <p class="copyright">
+                      &copy; {{ site.author }}
+                  </p>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+    {% include footer.html %}
+</body>
+</html>
